@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ApexTech Solutions | IT Helpdesk Portal</title>
+    <link rel="stylesheet" href="practicum9.css">
+</head>
+
+<body>
+
+<header class="header">
+    <h1>ApexTech Solutions Helpdesk</h1>
+    <p>Centralized IT Support, Incident Management and Technical Services</p>
+
+    <nav class="navbar">
+        <ul class="nav-menu">
+            <li><a href="#services">IT Services</a></li>
+            <li><a href="#tickets">Priority Matrix</a></li>
+            <li><a href="#request-form">Raise a Ticket</a></li>
+            <li><a href="#knowledge-base">Knowledge Base</a></li>
+            <li><a href="#multimedia">Multimedia</a></li>
+            <li><a href="#responsive">Responsive Design</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+
+    <!-- IT SERVICES -->
+    <section id="services" class="container reveal">
+        <h2>Our Technical Support Services</h2>
+
+        <p class="intro">
+            ApexTech Solutions provides reliable technical support
+            for employees and workplace infrastructure.
+        </p>
+
+        <div class="service-container">
+
+            <article class="service-card">
+                <h3>Hardware Provisioning</h3>
+                <p>Laptop deployment and hardware replacement.</p>
+            </article>
+
+            <article class="service-card">
+                <h3>Software Configuration</h3>
+                <p>Operating system installation and VPN setup.</p>
+            </article>
+
+            <article class="service-card">
+                <h3>Access Control</h3>
+                <p>Password resets and Multi-Factor Authentication.</p>
+            </article>
+
+        </div>
+
+        <figure class="service-image">
+            <img src="WhatsApp Image 2026-09-03 at 2.44.03 PM.jpeg"
+                 alt="Computer workstation" width="500" height="300">
+            <figcaption>IT professionals working with computer technology.</figcaption>
+        </figure>
+    </section>
+
+
+    <!-- PRIORITY MATRIX -->
+    <section id="tickets" class="container reveal">
+        <h2>Incident Classification & Response SLA Matrix</h2>
+
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Priority</th>
+                        <th>Impact Definition</th>
+                        <th>Response Time</th>
+                        <th>Resolution Time</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>P1 - Critical</td>
+                        <td>Complete server or network failure.</td>
+                        <td>15 Minutes</td>
+                        <td>4 Hours</td>
+                    </tr>
+                    <tr>
+                        <td>P2 - High</td>
+                        <td>Department-wide technical issue.</td>
+                        <td>1 Hour</td>
+                        <td>8 Hours</td>
+                    </tr>
+                    <tr>
+                        <td>P3 - Medium</td>
+                        <td>Individual software issue.</td>
+                        <td>4 Hours</td>
+                        <td>24 Hours</td>
+                    </tr>
+                    <tr>
+                        <td>P4 - Low</td>
+                        <td>General technical questions.</td>
+                        <td>12 Hours</td>
+                        <td>3 Business Days</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+
+    <!-- TICKET FORM -->
+    <section id="request-form" class="container reveal">
+        <h2>IT Support Request Form</h2>
+
+        <p class="intro">
+            Fill in the details below to report your technical problem.
+        </p>
+
+        <form id="ticketForm">
+
+            <fieldset>
+                <legend>Employee Information</legend>
+
+                <label for="name">Employee Name:</label>
+                <input type="text" id="name" name="employee_name"
+                       placeholder="Enter your full name"
+                       minlength="3" required>
+
+                <label for="email">Email Address:</label>
+                <input type="email" id="email" name="email"
+                       placeholder="example@company.com" required>
+
+                <label for="employee-id">Employee ID:</label>
+                <input type="number" id="employee-id"
+                       name="employee_id" min="1" required>
+
+                <label for="date">Request Date:</label>
+                <input type="date" id="date" name="request_date" required>
+
+                <label for="department">Select Department:</label>
+                <select id="department" name="department" required>
+                    <option value="">-- Select Department --</option>
+                    <option>Human Resources</option>
+                    <option>Information Technology</option>
+                    <option>Finance</option>
+                    <option>Marketing</option>
+                    <option>Sales</option>
+                </select>
+            </fieldset>
+
+
+            <fieldset>
+                <legend>Issue Priority</legend>
+
+                <div class="option">
+                    <input type="radio" name="priority" value="P1 Critical" required>
+                    <label>P1 - Critical</label>
+                </div>
+
+                <div class="option">
+                    <input type="radio" name="priority" value="P2 High">
+                    <label>P2 - High</label>
+                </div>
+
+                <div class="option">
+                    <input type="radio" name="priority" value="P3 Medium">
+                    <label>P3 - Medium</label>
+                </div>
+
+                <div class="option">
+                    <input type="radio" name="priority" value="P4 Low">
+                    <label>P4 - Low</label>
+                </div>
+            </fieldset>
+
+
+            <fieldset>
+                <legend>Type of Technical Issue</legend>
+
+                <div class="option">
+                    <input type="checkbox" name="issue" value="Hardware">
+                    <label>Hardware Problem</label>
+                </div>
+
+                <div class="option">
+                    <input type="checkbox" name="issue" value="Software">
+                    <label>Software Problem</label>
+                </div>
+
+                <div class="option">
+                    <input type="checkbox" name="issue" value="Network">
+                    <label>Network Problem</label>
+                </div>
+
+                <div class="option">
+                    <input type="checkbox" name="issue" value="Password Reset">
+                    <label>Password Reset</label>
+                </div>
+            </fieldset>
+
+
+            <fieldset>
+                <legend>Problem Description</legend>
+
+                <label for="description">Describe your technical problem:</label>
+                <textarea id="description" name="description"
+                          rows="5" minlength="10"
+                          placeholder="Explain your problem here..."
+                          required></textarea>
+            </fieldset>
+
+
+            <fieldset>
+                <legend>Upload Supporting File</legend>
+
+                <label for="attachment">Upload Screenshot or Document:</label>
+                <input type="file" id="attachment"
+                       accept=".jpg,.jpeg,.png,.pdf,.doc,.docx">
+            </fieldset>
+
+
+            <div class="button-group">
+                <button type="submit" class="submit-btn">
+                    Submit IT Request
+                </button>
+
+                <button type="reset" class="reset-btn">
+                    Reset Form
+                </button>
+            </div>
+
+        </form>
+
+        <!-- Notification -->
+        <div id="notification" class="notification">
+            <span id="notificationMessage"></span>
+        </div>
+
+    </section>
+
+
+    <!-- KNOWLEDGE BASE -->
+    <section id="knowledge-base" class="container reveal">
+        <h2>Self-Service Knowledge Base</h2>
+
+        <div class="article-card">
+            <h3>Article #1042: Secure VPN Connection</h3>
+
+            <p>
+                Employees working remotely must connect to the
+                corporate VPN and complete MFA.
+            </p>
+
+            <button class="read-btn">Read More</button>
+
+            <div class="extra-content">
+                <p>
+                    Step 1: Open the VPN application.<br>
+                    Step 2: Enter your corporate username.<br>
+                    Step 3: Complete Multi-Factor Authentication.<br>
+                    Step 4: Confirm that your VPN connection is active.
+                </p>
+            </div>
+        </div>
+
+
+        <div class="article-card">
+            <h3>Article #1043: Browser Cache Troubleshooting</h3>
+
+            <p>
+                Clear browser cookies and cache when websites
+                display outdated information.
+            </p>
+
+            <button class="read-btn">Read More</button>
+
+            <div class="extra-content">
+                <p>
+                    Step 1: Open browser settings.<br>
+                    Step 2: Select Privacy and Security.<br>
+                    Step 3: Choose Clear Browsing Data.<br>
+                    Step 4: Reload the website.
+                </p>
+            </div>
+        </div>
+
+    </section>
+
+
+    <!-- MULTIMEDIA -->
+    <section id="multimedia" class="container reveal">
+        <h2>IT Helpdesk Multimedia Learning Centre</h2>
+
+        <div class="media-card">
+            <h3>IT Support Audio Guide</h3>
+
+            <audio controls>
+                <source src="WhatsApp Audio 2026-09-03 at 2.41.06 PM.mpeg"
+                        type="audio/mpeg">
+                Your browser does not support audio.
+            </audio>
+        </div>
+
+        <div class="media-card">
+            <h3>VPN Setup Video Tutorial</h3>
+
+            <video controls>
+                <source src="create_a_video_for_the_title_.mp4"
+                        type="video/mp4">
+                Your browser does not support video.
+            </video>
+        </div>
+
+        <div class="media-card">
+            <h3>Embedded IT Learning Resource</h3>
+
+          <iframe width="600" height="450" src="https://www.openstreetmap.org/export/embed.html?bbox=77.0%2C10.95%2C77.05%2C11.0&layer=mapnik&marker=10.9985%2C77.0267"></iframe>
+        </div>
+    </section>
+
+
+    <!-- RESPONSIVE DESIGN OBJECTIVE -->
+    <section id="responsive" class="container reveal">
+        <h2>Responsive Web Design Objectives</h2>
+
+        <p class="intro">
+            This website uses CSS media queries and flexible layouts
+            to adapt to different screen sizes.
+        </p>
+
+        <div class="responsive-container">
+
+            <div class="responsive-card">
+                <h3>Desktop Design</h3>
+                <p>
+                    Three-column layouts, horizontal navigation
+                    and spacious content sections.
+                </p>
+            </div>
+
+            <div class="responsive-card">
+                <h3>Tablet Design</h3>
+                <p>
+                    Two-column layouts and adjusted navigation
+                    for medium-sized screens.
+                </p>
+            </div>
+
+            <div class="responsive-card">
+                <h3>Mobile Design</h3>
+                <p>
+                    Single-column layouts, vertical navigation
+                    and mobile-friendly buttons.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- INTERACTIVE DEMO -->
+    <section class="container reveal">
+        <h2>Interactive IT Helpdesk Features</h2>
+
+        <p class="intro">
+            Click the button below to display an animated IT information card.
+        </p>
+
+        <button id="infoButton" class="submit-btn">
+            Show IT Information
+        </button>
+
+        <div id="infoCard" class="info-card">
+            <h3>Welcome to ApexTech IT Support!</h3>
+            <p>
+                Our IT support team assists with hardware,
+                software, network and access-control issues.
+            </p>
+        </div>
+    </section>
+
+</main>
+
+
+<!-- FOOTER -->
+<footer id="contact">
+    <h2>Still Experiencing Issues?</h2>
+
+    <p>Contact our technical support team for assistance.</p>
+
+    <p>
+        Email:
+        <a href="mailto:support@apextechsolutions.demo">
+            support@apextechsolutions.demo
+        </a>
+    </p>
+
+    <p>
+        Emergency Ops Line:
+        <a href="tel:+15550155">(555) 0155</a>
+    </p>
+
+    <p>&copy; 2026 ApexTech Solutions. All rights reserved.</p>
+</footer>
+
+
+<script src="practicum9.js"></script>
+
+</body>
+</html>

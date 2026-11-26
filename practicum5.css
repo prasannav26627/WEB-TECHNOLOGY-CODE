@@ -1,0 +1,716 @@
+
+/* =====================================
+   GENERAL STYLING
+===================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f1f5f9;
+    color: #263445;
+    line-height: 1.6;
+}
+
+
+/* =====================================
+   HEADER
+===================================== */
+
+.header {
+    background: linear-gradient(135deg, #102a43, #176b87);
+    color: white;
+    text-align: center;
+    padding: 35px 20px;
+}
+
+.header h1 {
+    font-size: 34px;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+}
+
+.header p {
+    font-size: 16px;
+    color: #dbeafe;
+}
+
+
+/* =====================================
+   RESPONSIVE NAVIGATION USING FLEXBOX
+===================================== */
+
+.navbar {
+    margin-top: 25px;
+    background-color: #0b1f33;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+/* FLEXBOX MENU */
+
+.nav-menu {
+    list-style: none;
+
+    display: flex;
+
+    flex-direction: row;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 15px;
+
+    flex-wrap: wrap;
+}
+
+/* NAVIGATION ITEMS */
+
+.nav-menu li {
+    display: flex;
+    align-items: center;
+}
+
+/* NAVIGATION LINKS */
+
+.nav-menu li a {
+    color: white;
+    text-decoration: none;
+
+    padding: 10px 15px;
+
+    display: block;
+
+    border-radius: 5px;
+
+    font-size: 15px;
+    font-weight: bold;
+
+    transition: 0.3s ease;
+}
+
+/* HOVER EFFECT */
+
+.nav-menu li a:hover {
+    background-color: #18a0ae;
+    color: white;
+
+    transform: translateY(-3px);
+}
+
+
+/* =====================================
+   MAIN CONTAINER
+===================================== */
+
+main {
+    max-width: 1150px;
+    margin: auto;
+    padding: 20px;
+}
+
+
+/* =====================================
+   SECTION STYLING
+===================================== */
+
+.container {
+    background-color: white;
+
+    margin: 30px 0;
+
+    padding: 30px;
+
+    border-radius: 12px;
+
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.container h2 {
+    color: #125578;
+
+    font-size: 25px;
+
+    text-align: center;
+
+    margin-bottom: 20px;
+
+    border-bottom: 3px solid #18a0ae;
+
+    padding-bottom: 12px;
+}
+
+.intro {
+    text-align: center;
+
+    margin-bottom: 25px;
+
+    color: #526579;
+}
+
+
+/* =====================================
+   SERVICE CARDS
+===================================== */
+
+.service-container {
+    display: flex;
+
+    gap: 20px;
+
+    flex-wrap: wrap;
+
+    margin-top: 25px;
+}
+
+.service-card {
+    flex: 1 1 250px;
+
+    background-color: #eaf6fa;
+
+    padding: 25px;
+
+    border-left: 5px solid #1595a8;
+
+    border-radius: 8px;
+
+    transition: 0.3s;
+}
+
+.service-card h3 {
+    color: #125578;
+    margin-bottom: 10px;
+}
+
+.service-card:hover {
+    transform: translateY(-6px);
+
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.12);
+
+    background-color: #dff4fa;
+}
+
+
+/* =====================================
+   IMAGE
+===================================== */
+
+.service-image {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.service-image img {
+    max-width: 100%;
+
+    height: auto;
+
+    border-radius: 10px;
+
+    border: 4px solid #d9e6ed;
+}
+
+figcaption {
+    color: #64748b;
+
+    margin-top: 10px;
+
+    font-size: 14px;
+}
+
+
+/* =====================================
+   PRIORITY TABLE
+===================================== */
+
+.table-container {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+
+    border-collapse: collapse;
+
+    margin-top: 20px;
+
+    text-align: center;
+}
+
+th {
+    background-color: #125578;
+
+    color: white;
+
+    padding: 15px;
+}
+
+td {
+    padding: 14px;
+
+    border: 1px solid #d6e0e8;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #edf5f8;
+}
+
+tbody tr:hover {
+    background-color: #d9eff5;
+}
+
+
+/* =====================================
+   FORM
+===================================== */
+
+form {
+    max-width: 800px;
+
+    margin: 25px auto 0;
+
+    background-color: #f8fafc;
+
+    padding: 25px;
+
+    border: 1px solid #d9e2ec;
+
+    border-radius: 10px;
+}
+
+fieldset {
+    border: 1px solid #b8cbd8;
+
+    border-radius: 8px;
+
+    padding: 20px;
+
+    margin-bottom: 20px;
+
+    background-color: white;
+}
+
+legend {
+    color: #125578;
+
+    font-weight: bold;
+
+    padding: 0 10px;
+
+    font-size: 17px;
+}
+
+
+/* =====================================
+   FORM LABELS
+===================================== */
+
+label {
+    display: inline-block;
+
+    font-weight: bold;
+
+    margin-bottom: 7px;
+
+    color: #34495e;
+}
+
+
+/* =====================================
+   FORM INPUTS
+===================================== */
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+input[type="date"],
+select,
+textarea {
+
+    width: 100%;
+
+    padding: 12px;
+
+    margin-bottom: 18px;
+
+    border: 1px solid #bdcbd5;
+
+    border-radius: 6px;
+
+    font-size: 15px;
+
+    background-color: #ffffff;
+
+    outline: none;
+
+    transition: 0.3s;
+}
+
+
+/* INPUT FOCUS EFFECT */
+
+input:focus,
+select:focus,
+textarea:focus {
+
+    border-color: #1595a8;
+
+    box-shadow: 0 0 5px rgba(21, 149, 168, 0.35);
+}
+
+
+/* =====================================
+   RADIO BUTTONS AND CHECKBOXES
+===================================== */
+
+.option {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    margin: 10px 0;
+}
+
+.option input {
+    width: 17px;
+
+    height: 17px;
+
+    accent-color: #1595a8;
+
+    cursor: pointer;
+}
+
+.option label {
+    margin: 0;
+
+    cursor: pointer;
+}
+
+
+/* =====================================
+   FILE INPUT
+===================================== */
+
+input[type="file"] {
+
+    display: block;
+
+    width: 100%;
+
+    padding: 12px;
+
+    border: 1px dashed #1595a8;
+
+    border-radius: 6px;
+
+    background-color: #f0f9ff;
+
+    margin-top: 10px;
+}
+
+
+/* =====================================
+   TEXTAREA
+===================================== */
+
+textarea {
+    resize: vertical;
+}
+
+
+/* =====================================
+   BUTTONS
+===================================== */
+
+.button-group {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 15px;
+
+    flex-wrap: wrap;
+
+    margin-top: 20px;
+}
+
+button {
+
+    padding: 13px 25px;
+
+    border: none;
+
+    border-radius: 6px;
+
+    font-size: 15px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.submit-btn {
+    background-color: #087e8b;
+    color: white;
+}
+
+.submit-btn:hover {
+    background-color: #065b66;
+
+    transform: translateY(-3px);
+}
+
+.reset-btn {
+    background-color: #64748b;
+    color: white;
+}
+
+.reset-btn:hover {
+    background-color: #334155;
+
+    transform: translateY(-3px);
+}
+
+
+/* =====================================
+   KNOWLEDGE BASE
+===================================== */
+
+.article-card {
+
+    background-color: #f0f7fa;
+
+    padding: 22px;
+
+    margin: 18px 0;
+
+    border-left: 5px solid #1595a8;
+
+    border-radius: 7px;
+
+    transition: 0.3s;
+}
+
+.article-card h3 {
+    color: #125578;
+
+    margin-bottom: 10px;
+}
+
+.article-card:hover {
+    background-color: #e1f2f7;
+
+    transform: translateX(5px);
+}
+
+
+/* =====================================
+   MULTIMEDIA
+===================================== */
+
+.media-card {
+
+    background-color: #f8fafc;
+
+    padding: 22px;
+
+    margin: 20px 0;
+
+    border: 1px solid #d9e2ec;
+
+    border-radius: 8px;
+}
+
+.media-card h3 {
+    color: #125578;
+
+    margin-bottom: 15px;
+}
+
+audio,
+video,
+iframe {
+
+    max-width: 100%;
+
+    margin-top: 10px;
+
+    border-radius: 7px;
+}
+
+.media-card video,
+.media-card iframe {
+
+    width: 100%;
+
+    max-width: 600px;
+}
+
+
+/* =====================================
+   FOOTER
+===================================== */
+
+footer {
+
+    background-color: #102a43;
+
+    color: white;
+
+    text-align: center;
+
+    padding: 35px 20px;
+
+    margin-top: 30px;
+}
+
+footer h2 {
+    margin-bottom: 15px;
+
+    color: #63d5e3;
+}
+
+footer p {
+    margin: 10px 0;
+}
+
+footer a {
+    color: #63d5e3;
+
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: white;
+
+    text-decoration: underline;
+}
+
+
+/* =====================================
+   RESPONSIVE DESIGN - TABLETS
+===================================== */
+
+@media screen and (max-width: 768px) {
+
+    .header h1 {
+        font-size: 25px;
+    }
+
+    /* FLEXBOX NAVIGATION - VERTICAL */
+
+    .nav-menu {
+
+        flex-direction: column;
+
+        justify-content: center;
+
+        align-items: stretch;
+
+        gap: 8px;
+    }
+
+    .nav-menu li {
+        width: 100%;
+    }
+
+    .nav-menu li a {
+
+        text-align: center;
+
+        width: 100%;
+    }
+
+    main {
+        padding: 10px;
+    }
+
+    .container {
+        padding: 18px;
+    }
+
+    .service-container {
+        flex-direction: column;
+    }
+
+    form {
+        padding: 15px;
+    }
+
+    table {
+        min-width: 600px;
+    }
+
+    .button-group {
+        flex-direction: column;
+    }
+
+    button {
+        width: 100%;
+    }
+
+}
+
+
+/* =====================================
+   RESPONSIVE DESIGN - MOBILE
+===================================== */
+
+@media screen and (max-width: 480px) {
+
+    .header {
+        padding: 25px 12px;
+    }
+
+    .header h1 {
+        font-size: 22px;
+    }
+
+    .header p {
+        font-size: 13px;
+    }
+
+    .navbar {
+        padding: 10px;
+    }
+
+    .nav-menu {
+        gap: 5px;
+    }
+
+    .nav-menu li a {
+        padding: 12px;
+
+        font-size: 14px;
+    }
+
+    .container {
+        padding: 15px;
+    }
+
+    .container h2 {
+        font-size: 20px;
+    }
+
+    fieldset {
+        padding: 12px;
+    }
+
+    .media-card {
+        padding: 15px;
+    }
+
+}

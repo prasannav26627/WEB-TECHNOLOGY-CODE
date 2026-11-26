@@ -1,0 +1,761 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ApexTech Solutions | IT Helpdesk Portal</title>
+    <link rel="stylesheet" href="practicum13.css">
+</head>
+
+<body>
+
+<header class="header">
+    <h1>ApexTech Solutions Helpdesk</h1>
+    <p>Centralized IT Support, Incident Management and Technical Services</p>
+
+    <nav class="navbar">
+        <ul class="nav-menu">
+            <li><a href="#services">IT Services</a></li>
+            <li><a href="#tickets">Priority Matrix</a></li>
+            <li><a href="#request-form">Raise a Ticket</a></li>
+            <li><a href="#tracker">Live Tracker</a></li>
+            <li><a href="#task-manager">Task Manager</a></li>
+            <li><a href="#api-data">API Ticket Queue</a></li>
+            <li><a href="#knowledge-base">Knowledge Base</a></li>
+            <li><a href="#multimedia">Multimedia</a></li>
+            <li><a href="#responsive">Responsive Design</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+
+    <!-- IT SERVICES -->
+    <section id="services" class="container reveal">
+        <h2>Our Technical Support Services</h2>
+
+        <p class="intro">
+            ApexTech Solutions provides reliable technical support
+            for employees and workplace infrastructure.
+        </p>
+
+        <div class="service-container">
+
+            <article class="service-card">
+                <h3>Hardware Provisioning</h3>
+                <p>Laptop deployment and hardware replacement.</p>
+            </article>
+
+            <article class="service-card">
+                <h3>Software Configuration</h3>
+                <p>Operating system installation and VPN setup.</p>
+            </article>
+
+            <article class="service-card">
+                <h3>Access Control</h3>
+                <p>Password resets and Multi-Factor Authentication.</p>
+            </article>
+
+        </div>
+
+        <figure class="service-image">
+            <img src="WhatsApp Image 2026-09-03 at 2.44.03 PM.jpeg"
+                 alt="Computer workstation">
+            <figcaption>IT professionals working with computer technology.</figcaption>
+        </figure>
+    </section>
+
+
+    <!-- PRIORITY MATRIX -->
+    <section id="tickets" class="container reveal">
+        <h2>Incident Classification &amp; Response SLA Matrix</h2>
+
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Priority</th>
+                        <th>Impact Definition</th>
+                        <th>Response Time</th>
+                        <th>Resolution Time</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>P1 - Critical</td>
+                        <td>Complete server or network failure.</td>
+                        <td>15 Minutes</td>
+                        <td>4 Hours</td>
+                    </tr>
+                    <tr>
+                        <td>P2 - High</td>
+                        <td>Department-wide technical issue.</td>
+                        <td>1 Hour</td>
+                        <td>8 Hours</td>
+                    </tr>
+                    <tr>
+                        <td>P3 - Medium</td>
+                        <td>Individual software issue.</td>
+                        <td>4 Hours</td>
+                        <td>24 Hours</td>
+                    </tr>
+                    <tr>
+                        <td>P4 - Low</td>
+                        <td>General technical questions.</td>
+                        <td>12 Hours</td>
+                        <td>3 Business Days</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+
+    <!-- TICKET FORM (VALIDATED) -->
+    <section id="request-form" class="container reveal">
+        <h2>IT Support Request Form</h2>
+
+        <p class="intro">
+            Fill in the details below to report your technical problem.
+            Fields marked with * are required.
+        </p>
+
+        <form id="ticketForm" novalidate>
+
+            <fieldset>
+                <legend>Employee Information</legend>
+
+                <div class="form-group">
+                    <label for="name">Employee Name *</label>
+                    <input type="text" id="name" name="employee_name"
+                           placeholder="Enter your full name"
+                           minlength="3" maxlength="50"
+                           pattern="[A-Za-z][A-Za-z .'\-]*"
+                           autocomplete="name" required>
+                    <span class="error-message" id="name-error" aria-live="polite"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Work Email Address *</label>
+                    <input type="email" id="email" name="email"
+                           placeholder="example@company.com"
+                           maxlength="80"
+                           pattern="[^@\s]+@[^@\s]+\.[a-zA-Z]{2,}"
+                           autocomplete="email" required>
+                    <span class="error-message" id="email-error" aria-live="polite"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="employee-id">Employee ID (1000 - 99999) *</label>
+                    <input type="number" id="employee-id"
+                           name="employee_id" min="1000" max="99999"
+                           placeholder="e.g. 4821" required>
+                    <span class="error-message" id="employee-id-error" aria-live="polite"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Contact Phone (10 digits) *</label>
+                    <input type="tel" id="phone" name="phone"
+                           placeholder="9876543210"
+                           pattern="[0-9]{10}" maxlength="10"
+                           inputmode="numeric"
+                           title="Enter exactly 10 digits, numbers only"
+                           autocomplete="tel" required>
+                    <span class="error-message" id="phone-error" aria-live="polite"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="date">Request Date (last 30 days) *</label>
+                    <input type="date" id="date" name="request_date" required>
+                    <span class="error-message" id="date-error" aria-live="polite"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="department">Select Department *</label>
+                    <select id="department" name="department" required>
+                        <option value="">-- Select Department --</option>
+                        <option>Human Resources</option>
+                        <option>Information Technology</option>
+                        <option>Finance</option>
+                        <option>Marketing</option>
+                        <option>Sales</option>
+                    </select>
+                    <span class="error-message" id="department-error" aria-live="polite"></span>
+                </div>
+            </fieldset>
+
+
+            <fieldset>
+                <legend>Incident Details</legend>
+
+                <div class="form-group">
+                    <label for="summary">Issue Summary *</label>
+                    <input type="text" id="summary" name="summary"
+                           placeholder="e.g. Laptop will not connect to VPN"
+                           minlength="5" maxlength="80" required>
+                    <span class="error-message" id="summary-error" aria-live="polite"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="asset-tag">Device Asset Tag (optional)</label>
+                    <input type="text" id="asset-tag" name="asset_tag"
+                           placeholder="APX-12345"
+                           pattern="APX-[0-9]{5}" maxlength="9"
+                           title="Format: APX- followed by 5 digits, e.g. APX-12345">
+                    <span class="error-message" id="asset-tag-error" aria-live="polite"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="affected-users">Number of Affected Users (1 - 500) *</label>
+                    <input type="number" id="affected-users"
+                           name="affected_users" min="1" max="500"
+                           placeholder="1" required>
+                    <span class="error-message" id="affected-users-error" aria-live="polite"></span>
+                </div>
+            </fieldset>
+
+
+            <fieldset>
+                <legend>Issue Priority *</legend>
+
+                <div class="option">
+                    <input type="radio" id="p1" name="priority" value="P1 Critical" required>
+                    <label for="p1">P1 - Critical</label>
+                </div>
+
+                <div class="option">
+                    <input type="radio" id="p2" name="priority" value="P2 High">
+                    <label for="p2">P2 - High</label>
+                </div>
+
+                <div class="option">
+                    <input type="radio" id="p3" name="priority" value="P3 Medium">
+                    <label for="p3">P3 - Medium</label>
+                </div>
+
+                <div class="option">
+                    <input type="radio" id="p4" name="priority" value="P4 Low">
+                    <label for="p4">P4 - Low</label>
+                </div>
+
+                <span class="error-message" id="priority-error" aria-live="polite"></span>
+            </fieldset>
+
+
+            <fieldset>
+                <legend>Type of Technical Issue * (choose at least one)</legend>
+
+                <div class="option">
+                    <input type="checkbox" id="issue-hw" name="issue" value="Hardware">
+                    <label for="issue-hw">Hardware Problem</label>
+                </div>
+
+                <div class="option">
+                    <input type="checkbox" id="issue-sw" name="issue" value="Software">
+                    <label for="issue-sw">Software Problem</label>
+                </div>
+
+                <div class="option">
+                    <input type="checkbox" id="issue-nw" name="issue" value="Network">
+                    <label for="issue-nw">Network Problem</label>
+                </div>
+
+                <div class="option">
+                    <input type="checkbox" id="issue-pw" name="issue" value="Password Reset">
+                    <label for="issue-pw">Password Reset</label>
+                </div>
+
+                <span class="error-message" id="issue-error" aria-live="polite"></span>
+            </fieldset>
+
+
+            <fieldset>
+                <legend>Problem Description</legend>
+
+                <div class="form-group">
+                    <label for="description">Describe your technical problem *</label>
+                    <textarea id="description" name="description"
+                              rows="5" minlength="20" maxlength="500"
+                              placeholder="Explain what happened, when it started and any error messages (20 - 500 characters)..."
+                              required></textarea>
+                    <span class="char-counter" id="description-counter">0 / 500</span>
+                    <span class="error-message" id="description-error" aria-live="polite"></span>
+                </div>
+            </fieldset>
+
+
+            <fieldset>
+                <legend>Upload Supporting File</legend>
+
+                <div class="form-group">
+                    <label for="attachment">Upload Screenshot or Document (optional, max 2 MB)</label>
+                    <input type="file" id="attachment" name="attachment"
+                           accept=".jpg,.jpeg,.png,.pdf,.doc,.docx">
+                    <span class="error-message" id="attachment-error" aria-live="polite"></span>
+                </div>
+            </fieldset>
+
+
+            <fieldset>
+                <legend>Declaration</legend>
+
+                <div class="option">
+                    <input type="checkbox" id="confirm" name="confirm" required>
+                    <label for="confirm">I confirm that the details above are accurate. *</label>
+                </div>
+                <span class="error-message" id="confirm-error" aria-live="polite"></span>
+            </fieldset>
+
+
+            <div class="button-group">
+                <button type="submit" class="submit-btn">
+                    Submit IT Request
+                </button>
+
+                <button type="reset" class="reset-btn">
+                    Reset Form
+                </button>
+            </div>
+
+        </form>
+
+        <!-- Success / error message -->
+        <div id="notification" class="notification" role="status" aria-live="polite">
+            <span id="notificationMessage"></span>
+        </div>
+
+    </section>
+
+
+    <!-- LIVE INCIDENT & ASSET TRACKER (DOM MANIPULATION) -->
+    <section id="tracker" class="container reveal">
+        <h2>Live Incident &amp; Asset Tracker</h2>
+
+        <p class="intro">
+            Add, edit, resolve and remove IT incidents instantly.
+            Everything updates on this page without reloading.
+        </p>
+
+        <!-- Add form -->
+        <form id="trackerForm" class="tracker-form" novalidate>
+            <div class="tracker-field">
+                <label for="trackerTitle">Incident / Asset</label>
+                <input type="text" id="trackerTitle"
+                       placeholder="e.g. Dell Latitude 5420 - screen flicker"
+                       maxlength="80">
+            </div>
+
+            <div class="tracker-field">
+                <label for="trackerCategory">Category</label>
+                <select id="trackerCategory">
+                    <option value="Hardware">Hardware</option>
+                    <option value="Software">Software</option>
+                    <option value="Network">Network</option>
+                    <option value="Access Control">Access Control</option>
+                </select>
+            </div>
+
+            <div class="tracker-field">
+                <label for="trackerPriority">Priority</label>
+                <select id="trackerPriority">
+                    <option value="P1">P1 - Critical</option>
+                    <option value="P2">P2 - High</option>
+                    <option value="P3" selected>P3 - Medium</option>
+                    <option value="P4">P4 - Low</option>
+                </select>
+            </div>
+
+            <div class="tracker-field">
+                <label for="trackerOwner">Assigned Technician</label>
+                <input type="text" id="trackerOwner"
+                       placeholder="e.g. Anita R." maxlength="40">
+            </div>
+
+            <button type="submit" class="submit-btn tracker-add">Add to Tracker</button>
+        </form>
+
+        <p id="trackerError" class="tracker-error" role="alert"></p>
+
+        <!-- Toolbar -->
+        <div class="tracker-toolbar">
+            <input type="text" id="trackerSearch" placeholder="Search incidents...">
+
+            <select id="trackerFilter" aria-label="Filter by status">
+                <option value="All">All statuses</option>
+                <option value="Open">Open</option>
+                <option value="Resolved">Resolved</option>
+            </select>
+
+            <span id="trackerCount" class="tracker-count"></span>
+
+            <button type="button" id="clearResolvedBtn" class="reset-btn">Clear Resolved</button>
+        </div>
+
+        <!-- Dynamic list -->
+        <ul id="trackerList" class="tracker-list"></ul>
+
+        <p id="trackerEmpty" class="tracker-empty">No incidents to show.</p>
+    </section>
+
+
+    <!-- IT TASK MANAGER (CRUD + LOCAL STORAGE) -->
+    <section id="task-manager" class="container reveal">
+        <h2>IT Task Manager</h2>
+
+        <p class="intro">
+            Plan and track support work for the helpdesk team. Tasks are saved
+            in this browser, so they are still here after you refresh the page.
+        </p>
+
+        <!-- Summary cards (built by JavaScript) -->
+        <div id="taskStats" class="task-stats"></div>
+
+        <!-- Create / edit form -->
+        <form id="taskForm" class="task-form" novalidate>
+            <h3 id="taskFormHeading">Add a new task</h3>
+
+            <div class="task-form-grid">
+                <div class="task-field wide">
+                    <label for="taskTitle">Task *</label>
+                    <input type="text" id="taskTitle"
+                           placeholder="e.g. Patch Windows servers"
+                           maxlength="80">
+                </div>
+
+                <div class="task-field">
+                    <label for="taskAssignee">Assigned Technician</label>
+                    <input type="text" id="taskAssignee"
+                           placeholder="e.g. Anita R." maxlength="40">
+                </div>
+
+                <div class="task-field">
+                    <label for="taskCategory">Category</label>
+                    <select id="taskCategory">
+                        <option value="Hardware">Hardware</option>
+                        <option value="Software">Software</option>
+                        <option value="Network">Network</option>
+                        <option value="Access Control">Access Control</option>
+                        <option value="Security">Security</option>
+                    </select>
+                </div>
+
+                <div class="task-field">
+                    <label for="taskPriority">Priority</label>
+                    <select id="taskPriority">
+                        <option value="P1">P1 - Critical</option>
+                        <option value="P2">P2 - High</option>
+                        <option value="P3" selected>P3 - Medium</option>
+                        <option value="P4">P4 - Low</option>
+                    </select>
+                </div>
+
+                <div class="task-field">
+                    <label for="taskDue">Due Date</label>
+                    <input type="date" id="taskDue">
+                </div>
+
+                <div class="task-field">
+                    <label for="taskStatus">Status</label>
+                    <select id="taskStatus">
+                        <option value="To Do">To Do</option>
+                        <option value="In Progress">In Progress</option>
+                        <option value="Done">Done</option>
+                    </select>
+                </div>
+
+                <div class="task-field wide">
+                    <label for="taskNotes">Notes (optional)</label>
+                    <textarea id="taskNotes" rows="2" maxlength="200"
+                              placeholder="Add any details the next technician should know..."></textarea>
+                </div>
+            </div>
+
+            <p id="taskError" class="tracker-error" role="alert"></p>
+
+            <div class="button-group">
+                <button type="submit" id="taskSaveBtn" class="submit-btn">Add Task</button>
+                <button type="button" id="taskCancelBtn" class="reset-btn" hidden>Cancel Edit</button>
+            </div>
+        </form>
+
+        <!-- Toolbar -->
+        <div class="tracker-toolbar">
+            <input type="text" id="taskSearch" placeholder="Search tasks..." aria-label="Search tasks">
+
+            <select id="taskStatusFilter" aria-label="Filter tasks by status">
+                <option value="All">All statuses</option>
+                <option value="To Do">To Do</option>
+                <option value="In Progress">In Progress</option>
+                <option value="Done">Done</option>
+            </select>
+
+            <select id="taskSort" aria-label="Sort tasks">
+                <option value="newest">Newest first</option>
+                <option value="due">Due date</option>
+                <option value="priority">Priority</option>
+            </select>
+
+            <button type="button" id="taskClearDoneBtn" class="reset-btn">Clear Done</button>
+            <button type="button" id="taskResetBtn" class="reset-btn">Reset Sample Data</button>
+        </div>
+
+        <p id="taskSaved" class="task-saved"></p>
+
+        <!-- Task table (built by JavaScript) -->
+        <div class="table-container" id="taskTableWrapper">
+            <table class="task-table">
+                <thead>
+                    <tr>
+                        <th>Task</th>
+                        <th>Assigned To</th>
+                        <th>Category</th>
+                        <th>Priority</th>
+                        <th>Due</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="taskTableBody"></tbody>
+            </table>
+        </div>
+
+        <p id="taskEmpty" class="tracker-empty">No tasks to show.</p>
+    </section>
+
+
+    <!-- API TICKET QUEUE (FETCH + JSON) -->
+    <section id="api-data" class="container reveal">
+        <h2>Live Helpdesk Ticket Queue (API)</h2>
+
+        <p class="intro">
+            Tickets and technician details are loaded from a live API endpoint
+            and displayed below as soon as the data arrives.
+        </p>
+
+        <!-- Controls -->
+        <div class="api-toolbar">
+            <button type="button" id="loadTicketsBtn" class="submit-btn">Refresh Tickets</button>
+            <button type="button" id="testErrorBtn" class="reset-btn">Test Error Handling</button>
+
+            <select id="apiStatusFilter" aria-label="Filter tickets by status">
+                <option value="All">All statuses</option>
+                <option value="Open">Open</option>
+                <option value="Resolved">Resolved</option>
+            </select>
+
+            <span id="apiUpdated" class="api-updated"></span>
+        </div>
+
+        <!-- Loading indicator -->
+        <div id="apiLoading" class="api-loading" role="status" aria-live="polite">
+            <div class="spinner"></div>
+            <p>Loading tickets from the server...</p>
+        </div>
+
+        <!-- Error message -->
+        <div id="apiError" class="api-error" role="alert">
+            <p id="apiErrorMessage"></p>
+            <button type="button" id="retryBtn" class="submit-btn">Try Again</button>
+        </div>
+
+        <!-- Summary cards -->
+        <div id="apiStats" class="api-stats"></div>
+
+        <!-- Data table -->
+        <div class="table-container" id="apiTableWrapper">
+            <table class="api-table">
+                <thead>
+                    <tr>
+                        <th>Ticket</th>
+                        <th>Issue</th>
+                        <th>Assigned Technician</th>
+                        <th>Site</th>
+                        <th>Priority</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody id="apiTableBody"></tbody>
+            </table>
+        </div>
+
+        <p id="apiEmpty" class="tracker-empty">No tickets match the selected filter.</p>
+
+        <p class="api-note">
+            Source: JSONPlaceholder test API (<code>/todos</code> and <code>/users</code>).
+            Its records are mapped to helpdesk tickets and technicians for this demo.
+        </p>
+    </section>
+
+
+    <!-- KNOWLEDGE BASE -->
+    <section id="knowledge-base" class="container reveal">
+        <h2>Self-Service Knowledge Base</h2>
+
+        <div class="article-card">
+            <h3>Article #1042: Secure VPN Connection</h3>
+
+            <p>
+                Employees working remotely must connect to the
+                corporate VPN and complete MFA.
+            </p>
+
+            <button class="read-btn">Read More</button>
+
+            <div class="extra-content">
+                <p>
+                    Step 1: Open the VPN application.<br>
+                    Step 2: Enter your corporate username.<br>
+                    Step 3: Complete Multi-Factor Authentication.<br>
+                    Step 4: Confirm that your VPN connection is active.
+                </p>
+            </div>
+        </div>
+
+
+        <div class="article-card">
+            <h3>Article #1043: Browser Cache Troubleshooting</h3>
+
+            <p>
+                Clear browser cookies and cache when websites
+                display outdated information.
+            </p>
+
+            <button class="read-btn">Read More</button>
+
+            <div class="extra-content">
+                <p>
+                    Step 1: Open browser settings.<br>
+                    Step 2: Select Privacy and Security.<br>
+                    Step 3: Choose Clear Browsing Data.<br>
+                    Step 4: Reload the website.
+                </p>
+            </div>
+        </div>
+
+    </section>
+
+
+    <!-- MULTIMEDIA -->
+    <section id="multimedia" class="container reveal">
+        <h2>IT Helpdesk Multimedia Learning Centre</h2>
+
+        <div class="media-card">
+            <h3>IT Support Audio Guide</h3>
+
+            <audio controls>
+                <source src="WhatsApp Audio 2026-09-03 at 2.41.06 PM.mpeg"
+                        type="audio/mpeg">
+                Your browser does not support audio.
+            </audio>
+        </div>
+
+        <div class="media-card">
+            <h3>VPN Setup Video Tutorial</h3>
+
+            <video controls>
+                <source src="create_a_video_for_the_title_.mp4"
+                        type="video/mp4">
+                Your browser does not support video.
+            </video>
+        </div>
+
+        <div class="media-card">
+            <h3>Embedded IT Learning Resource</h3>
+
+            <iframe width="600" height="450" src="https://www.openstreetmap.org/export/embed.html?bbox=77.0%2C10.95%2C77.05%2C11.0&layer=mapnik&marker=10.9985%2C77.0267"></iframe>
+        </div>
+    </section>
+
+
+    <!-- RESPONSIVE DESIGN OBJECTIVE -->
+    <section id="responsive" class="container reveal">
+        <h2>Responsive Web Design Objectives</h2>
+
+        <p class="intro">
+            This website uses CSS media queries and flexible layouts
+            to adapt to different screen sizes.
+        </p>
+
+        <div class="responsive-container">
+
+            <div class="responsive-card">
+                <h3>Desktop Design</h3>
+                <p>
+                    Three-column layouts, horizontal navigation
+                    and spacious content sections.
+                </p>
+            </div>
+
+            <div class="responsive-card">
+                <h3>Tablet Design</h3>
+                <p>
+                    Two-column layouts and adjusted navigation
+                    for medium-sized screens.
+                </p>
+            </div>
+
+            <div class="responsive-card">
+                <h3>Mobile Design</h3>
+                <p>
+                    Single-column layouts, vertical navigation
+                    and mobile-friendly buttons.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- INTERACTIVE DEMO -->
+    <section class="container reveal">
+        <h2>Interactive IT Helpdesk Features</h2>
+
+        <p class="intro">
+            Click the button below to display an animated IT information card.
+        </p>
+
+        <button id="infoButton" class="submit-btn">
+            Show IT Information
+        </button>
+
+        <div id="infoCard" class="info-card">
+            <h3>Welcome to ApexTech IT Support!</h3>
+            <p>
+                Our IT support team assists with hardware,
+                software, network and access-control issues.
+            </p>
+        </div>
+    </section>
+
+</main>
+
+
+<!-- FOOTER -->
+<footer id="contact">
+    <h2>Still Experiencing Issues?</h2>
+
+    <p>Contact our technical support team for assistance.</p>
+
+    <p>
+        Email:
+        <a href="mailto:support@apextechsolutions.demo">
+            support@apextechsolutions.demo
+        </a>
+    </p>
+
+    <p>
+        Emergency Ops Line:
+        <a href="tel:+15550155">(555) 0155</a>
+    </p>
+
+    <p>&copy; 2026 ApexTech Solutions. All rights reserved.</p>
+</footer>
+
+
+<script src="practicum13.js"></script>
+
+</body>
+</html>
